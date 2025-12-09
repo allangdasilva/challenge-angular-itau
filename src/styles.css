@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/roboto-v50-latin-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/roboto-v50-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary-color: #f77102;
+  --secondary-color: #150183;
+
+  --bg-color: #f79c5f;
+  --text-body: #4c4c4c;
+  --text-heading-light: #ffffff;
+  --text-heading-dark: #000000;
+  --text-placeholder: #757575;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+ol,
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.font-body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1;
+}
+.font-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1;
+}
