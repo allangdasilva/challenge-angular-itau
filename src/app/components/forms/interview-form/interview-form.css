@@ -6,6 +6,8 @@
   gap: 20px;
 }
 .form {
+  grid-template-columns: 1fr;
+  justify-items: center;
   width: 100%;
   max-width: 504px;
   padding: 24px;
@@ -13,6 +15,7 @@
   background-color: var(--primary-color);
 
   .form-heading {
+    justify-self: start;
     color: var(--text-heading-light);
   }
 }
@@ -20,6 +23,7 @@
   overflow: hidden;
   border-radius: 12px;
   margin-top: 4px;
+  justify-self: stretch;
 }
 .inputs-wrapper {
   grid-template-columns: 1fr;
