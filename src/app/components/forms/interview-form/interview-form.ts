@@ -12,5 +12,5 @@ import { ButtonSubmit } from '../../ui/form/button-submit/button-submit';
 })
 export class InterviewForm {
   selectVecancyValues: string[] = ['Backend', 'Frontend', 'QA'];
-  selectLevelValues: string[] = ['Jr', 'Pl', 'Sn'];
+  selectLevelValues: string[] = ['Jr.', 'Pl.', 'Sn.'];
 }

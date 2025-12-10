@@ -1,5 +1,5 @@
-<label [for]="id()">{{ label() }}</label>
-<select [name]="name()" [id]="id()">
+<label class="sr-only" [for]="id()">{{ label() }}</label>
+<select class="select-field font-body" required [name]="name()" [id]="id()">
   <option value="" disabled selected>{{ placeholder() }}</option>
 
   @for (value of values(); track $index) {
