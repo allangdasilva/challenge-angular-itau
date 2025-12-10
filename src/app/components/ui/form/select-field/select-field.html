@@ -1,0 +1,8 @@
+<label [for]="id()">{{ label() }}</label>
+<select [name]="name()" [id]="id()">
+  <option value="" disabled selected>{{ placeholder() }}</option>
+
+  @for (value of values(); track $index) {
+  <option [value]="value | lowercase">{{ value }}</option>
+  }
+</select>

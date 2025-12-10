@@ -1,11 +1,34 @@
 <form>
   <h2>_Trabalhe conosco</h2>
-  <app-input-field type="text" name="name" label="Nome" placeholder="Nome" id="name" />
   <app-input-field
+    [id]="'input-name'"
+    name="name"
     type="text"
+    label="Nome"
+    placeholder="Nome"
+    autocomplete="name"
+  />
+  <app-input-field
+    [id]="'input-last-name'"
     name="last-name"
+    type="text"
     label="Sobrenome"
     placeholder="Sobrenome"
-    id="last-name"
+    autocomplete="family-name"
+  />
+
+  <app-select-field
+    [id]="'select-vecancy'"
+    name="vecancy"
+    label="Vaga"
+    placeholder="Selecione a vaga"
+    [values]="selectVecancyValues"
+  />
+  <app-select-field
+    [id]="'select-level'"
+    name="level"
+    label="Nível"
+    placeholder="Nvl"
+    [values]="selectLevelValues"
   />
 </form>

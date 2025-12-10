@@ -12,4 +12,5 @@ export class InputField {
   placeholder = input.required<string>();
   name = input.required<string>();
   id = input.required<string>();
+  autocomplete = input<string>();
 }
