@@ -3,6 +3,6 @@
   <option value="" disabled selected>{{ placeholder() }}</option>
 
   @for (value of values(); track $index) {
-  <option [value]="value | lowercase">{{ value }}</option>
+  <option class="font-body" [value]="value | lowercase">{{ value }}</option>
   }
 </select>

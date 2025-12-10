@@ -4,18 +4,18 @@
   outline: none;
   background-color: var(--bg-light);
   color: var(--text-body);
+  transition: box-shadow 0.2s ease;
 
   &:focus {
     box-shadow: var(--form-fields-focus);
   }
 }
 option {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(0.875rem, 2vw, 1rem);
-  line-height: 1;
   color: var(--text-body);
 }
 .select-field:invalid,
 option:disabled {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1.25;
   color: var(--text-placeholder);
 }
