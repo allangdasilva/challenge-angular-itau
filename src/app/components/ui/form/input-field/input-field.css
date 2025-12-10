@@ -1,0 +1,17 @@
+.input-field {
+  padding: 12px;
+  position: relative;
+  border: none;
+  outline: none;
+  color: var(--text-body);
+
+  &:focus {
+    box-shadow: 0px -20px 0px -16px var(--bg-color) inset;
+  }
+}
+.input-field::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1;
+  color: var(--text-placeholder);
+}

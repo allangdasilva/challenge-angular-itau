@@ -1,5 +1,6 @@
-<label [for]="id()">{{ label() }}</label>
+<label class="sr-only" [for]="id()">{{ label() }}</label>
 <input
+  class="input-field font-body"
   [autocomplete]="autocomplete()"
   [type]="type()"
   [placeholder]="placeholder()"
