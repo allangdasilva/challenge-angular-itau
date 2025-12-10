@@ -56,6 +56,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: none;
+}
 
 .font-body {
   font-family: 'Roboto', sans-serif;

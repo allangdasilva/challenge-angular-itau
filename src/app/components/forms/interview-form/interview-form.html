@@ -1,43 +1,52 @@
-<form>
-  <h2>_Trabalhe conosco</h2>
-  <app-input-field
-    [id]="'input-name'"
-    name="name"
-    type="text"
-    label="Nome"
-    placeholder="Nome"
-    autocomplete="name"
-  />
-  <app-input-field
-    [id]="'input-last-name'"
-    name="last-name"
-    type="text"
-    label="Sobrenome"
-    placeholder="Sobrenome"
-    autocomplete="family-name"
-  />
+<form class="form">
+  <h2 class="form-heading font-title">_Trabalhe conosco</h2>
 
-  <app-select-field
-    [id]="'select-vecancy'"
-    name="vecancy"
-    label="Vaga"
-    placeholder="Selecione a vaga"
-    [values]="selectVecancyValues"
-  />
-  <app-select-field
-    [id]="'select-level'"
-    name="level"
-    label="Nível"
-    placeholder="Nvl"
-    [values]="selectLevelValues"
-  />
+  <div class="fields-wrapper">
+    <div class="inputs-wrapper">
+      <app-input-field
+        [id]="'input-name'"
+        name="name"
+        type="text"
+        label="Nome"
+        placeholder="Nome"
+        autocomplete="name"
+      />
+      <app-input-field
+        [id]="'input-last-name'"
+        name="last-name"
+        type="text"
+        label="Sobrenome"
+        placeholder="Sobrenome"
+        autocomplete="family-name"
+      />
+    </div>
 
-  <app-textarea-field
-    [id]="'textarea-message'"
-    name="message"
-    label="Mensagem"
-    placeholder="Fale um pouco sobre você..."
-  />
+    <div class="selects-wrapper">
+      <app-select-field
+        [id]="'select-vecancy'"
+        name="vecancy"
+        label="Vaga"
+        placeholder="Selecione a vaga"
+        [values]="selectVecancyValues"
+      />
+      <app-select-field
+        [id]="'select-level'"
+        name="level"
+        label="Nível"
+        placeholder="Nvl"
+        [values]="selectLevelValues"
+      />
+    </div>
+
+    <div class="textarea-wrapper">
+      <app-textarea-field
+        [id]="'textarea-message'"
+        name="message"
+        label="Mensagem"
+        placeholder="Fale um pouco sobre você..."
+      />
+    </div>
+  </div>
 
   <app-button-submit />
 </form>

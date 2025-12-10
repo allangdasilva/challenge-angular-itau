@@ -1,0 +1,37 @@
+.form,
+.fields-wrapper,
+.inputs-wrapper,
+.selects-wrapper {
+  display: grid;
+  gap: 20px;
+}
+.form {
+  width: 100%;
+  max-width: 504px;
+  padding: 24px;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+
+  .form-heading {
+    color: var(--text-heading-light);
+  }
+}
+.fields-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 4px;
+}
+.inputs-wrapper {
+  grid-template-columns: 1fr;
+}
+.selects-wrapper {
+  grid-template-columns: 1fr;
+}
+@media (width >= 640px) {
+  .inputs-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .selects-wrapper {
+    grid-template-columns: 1.5fr 0.5fr;
+  }
+}

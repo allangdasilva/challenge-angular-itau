@@ -7,10 +7,10 @@ import { Component, input } from '@angular/core';
   styleUrl: './input-field.css',
 })
 export class InputField {
+  id = input.required<string>();
+  name = input.required<string>();
   type = input.required<string>();
   label = input.required<string>();
   placeholder = input.required<string>();
-  name = input.required<string>();
-  id = input.required<string>();
   autocomplete = input<string>();
 }
