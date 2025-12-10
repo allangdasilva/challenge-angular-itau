@@ -8,8 +8,6 @@
 .form {
   grid-template-columns: 1fr;
   justify-items: center;
-  width: 100%;
-  max-width: 504px;
   padding: 24px;
   border-radius: 20px;
   background-color: var(--primary-color);
@@ -31,6 +29,7 @@
 .selects-wrapper {
   grid-template-columns: 1fr;
 }
+
 @media (width >= 640px) {
   .inputs-wrapper {
     grid-template-columns: 1fr 1fr;
