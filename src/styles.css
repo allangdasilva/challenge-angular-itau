@@ -25,6 +25,8 @@
   --text-heading-light: #ffffff;
   --text-heading-dark: #000000;
   --text-placeholder: #757575;
+
+  --form-fields-focus: 0px -20px 0px -16px var(--bg-color) inset;
 }
 
 html {

@@ -1,2 +1,9 @@
-<label [for]="id()">{{ label() }}</label>
-<textarea [name]="name()" [id]="id()" [placeholder]="placeholder()"></textarea>
+<label class="sr-only" [for]="id()">{{ label() }}</label>
+<textarea
+  class="textarea-field font-body"
+  [name]="name()"
+  [id]="id()"
+  [placeholder]="placeholder()"
+  rows="4"
+  maxlength="255"
+></textarea>
