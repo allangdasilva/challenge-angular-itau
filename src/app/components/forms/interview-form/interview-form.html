@@ -1,52 +1,56 @@
 <form class="form">
-  <h2 class="form-heading font-title">_Trabalhe conosco</h2>
+  <h2 class="form__label font__title">_Trabalhe conosco</h2>
 
-  <div class="fields-wrapper">
-    <div class="inputs-wrapper">
-      <app-input-field
-        [id]="'input-name'"
-        name="name"
-        type="text"
-        label="Nome"
-        placeholder="Nome"
-        autocomplete="name"
-      />
-      <app-input-field
-        [id]="'input-last-name'"
-        name="last-name"
-        type="text"
-        label="Sobrenome"
-        placeholder="Sobrenome"
-        autocomplete="family-name"
-      />
+  <div class="form__group">
+    <div class="form__group--border-radius">
+      <div class="form__input__group">
+        <app-input-field
+          [id]="'input-name'"
+          name="name"
+          type="text"
+          label="Nome"
+          placeholder="Nome"
+          autocomplete="name"
+        />
+        <app-input-field
+          [id]="'input-last-name'"
+          name="last-name"
+          type="text"
+          label="Sobrenome"
+          placeholder="Sobrenome"
+          autocomplete="family-name"
+        />
+      </div>
+
+      <div class="form__select__group">
+        <app-select-field
+          [id]="'select-vecancy'"
+          name="vecancy"
+          label="Vaga"
+          placeholder="Selecione a vaga"
+          [values]="selectVecancyValues"
+        />
+        <app-select-field
+          [id]="'select-level'"
+          name="level"
+          label="Nível"
+          placeholder="Nvl"
+          [values]="selectLevelValues"
+        />
+      </div>
+
+      <div class="form__textarea__group">
+        <app-textarea-field
+          [id]="'textarea-message'"
+          name="message"
+          label="Mensagem"
+          placeholder="Fale um pouco sobre você..."
+        />
+      </div>
     </div>
 
-    <div class="selects-wrapper">
-      <app-select-field
-        [id]="'select-vecancy'"
-        name="vecancy"
-        label="Vaga"
-        placeholder="Selecione a vaga"
-        [values]="selectVecancyValues"
-      />
-      <app-select-field
-        [id]="'select-level'"
-        name="level"
-        label="Nível"
-        placeholder="Nvl"
-        [values]="selectLevelValues"
-      />
-    </div>
-
-    <div class="textarea-wrapper">
-      <app-textarea-field
-        [id]="'textarea-message'"
-        name="message"
-        label="Mensagem"
-        placeholder="Fale um pouco sobre você..."
-      />
+    <div class="form__button__group">
+      <app-button-submit />
     </div>
   </div>
-
-  <app-button-submit />
 </form>
