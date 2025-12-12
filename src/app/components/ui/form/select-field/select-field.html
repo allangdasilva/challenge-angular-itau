@@ -1,5 +1,11 @@
 <label class="sr__only" [for]="id()">{{ label() }}</label>
-<select class="form__select font__body" required [name]="name()" [id]="id()">
+<select
+  class="form__select font__body"
+  required
+  [name]="name()"
+  [id]="id()"
+  [formControl]="control()"
+>
   <option class="form__select__option--disabled font__body" value="" disabled selected>
     {{ placeholder() }}
   </option>

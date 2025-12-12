@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" [formGroup]="interviewForm" (ngSubmit)="formSubmit()">
   <h2 class="form__label font__title">_Trabalhe conosco</h2>
 
   <div class="form__group">
@@ -11,6 +11,7 @@
           label="Nome"
           placeholder="Nome"
           autocomplete="name"
+          [control]="interviewForm.controls.firstName"
         />
         <app-input-field
           [id]="'input-last-name'"
@@ -19,6 +20,7 @@
           label="Sobrenome"
           placeholder="Sobrenome"
           autocomplete="family-name"
+          [control]="interviewForm.controls.lastName"
         />
       </div>
 
@@ -29,6 +31,7 @@
           label="Vaga"
           placeholder="Selecione a vaga"
           [values]="selectVecancyValues"
+          [control]="interviewForm.controls.vecancy"
         />
         <app-select-field
           [id]="'select-level'"
@@ -36,6 +39,7 @@
           label="Nível"
           placeholder="Nvl"
           [values]="selectLevelValues"
+          [control]="interviewForm.controls.level"
         />
       </div>
 
@@ -45,12 +49,13 @@
           name="message"
           label="Mensagem"
           placeholder="Fale um pouco sobre você..."
+          [control]="interviewForm.controls.message"
         />
       </div>
     </div>
 
     <div class="form__button__group">
-      <app-button-submit />
+      <app-button-submit [valid]="!interviewForm.valid" />
     </div>
   </div>
 </form>

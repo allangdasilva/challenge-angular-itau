@@ -22,3 +22,9 @@
     outline: 2px solid var(--bg-color);
   }
 }
+.form__button:disabled {
+  color: var(--text-placeholder);
+  background-color: var(--bg-disabled);
+
+  pointer-events: none;
+}
