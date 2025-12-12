@@ -11,6 +11,6 @@ main {
   background-color: var(--bg-color);
 }
 section {
-  width: 100%;
+  flex: 1;
   max-width: 504px;
 }

@@ -9,6 +9,7 @@
   background-color: var(--primary-color);
 }
 .form__label {
+  margin-bottom: 12px;
   color: var(--text-heading-light);
 }
 .form__group {
