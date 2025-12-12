@@ -1,17 +1,19 @@
-.textarea-field {
+.form__textarea {
   padding: 12px;
+
+  color: var(--text-body);
+
   border: none;
   outline: none;
+
   resize: none;
-  margin: 0;
-  color: var(--text-body);
   transition: box-shadow 0.2s ease;
 
   &:focus {
     box-shadow: var(--form-fields-focus);
   }
 }
-.textarea-field::placeholder {
+.form__textarea::placeholder {
   font-family: 'Roboto', sans-serif;
   font-size: clamp(0.875rem, 2vw, 1rem);
   line-height: 1.25;
