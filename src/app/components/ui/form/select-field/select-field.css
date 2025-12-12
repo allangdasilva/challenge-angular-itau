@@ -1,21 +1,22 @@
-.select-field {
+.form__select {
   padding: 12px;
+
+  color: var(--text-body);
+
   border: none;
   outline: none;
+
   background-color: var(--bg-light);
-  color: var(--text-body);
   transition: box-shadow 0.2s ease;
 
   &:focus {
     box-shadow: var(--form-fields-focus);
   }
 }
-option {
+.form__select__option {
   color: var(--text-body);
 }
-.select-field:invalid,
-option:disabled {
-  font-size: clamp(0.875rem, 2vw, 1rem);
-  line-height: 1.25;
+.form__select:invalid,
+.form__select__option--disabled:disabled {
   color: var(--text-placeholder);
 }
