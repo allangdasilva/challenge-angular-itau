@@ -17,7 +17,7 @@ export class InterviewForm {
 
   interviewForm = new FormGroup({
     firstName: new FormControl('', [Validators.required, Validators.maxLength(20)]),
-    lastName: new FormControl('', Validators.required),
+    lastName: new FormControl('', [Validators.required, Validators.maxLength(20)]),
     vecancy: new FormControl('', Validators.required),
     level: new FormControl('', Validators.required),
     message: new FormControl(''),

@@ -1,10 +1,16 @@
-<label class="sr__only" [for]="id()">{{ label() }}</label>
-<input
-  class="form__input font__body"
-  [autocomplete]="autocomplete()"
-  [type]="type()"
-  [placeholder]="placeholder()"
-  [id]="id()"
-  [name]="name()"
-  [formControl]="control()"
-/>
+<div>
+  <label class="sr__only" [for]="id()">{{ label() }}</label>
+  <input
+    class="form__input font__body"
+    [autocomplete]="autocomplete()"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [id]="id()"
+    [name]="name()"
+    [formControl]="control()"
+  />
+
+  @if (control().invalid && control().touched) {
+  <p class="form__error">&#9888; {{ getErrorMessage() }}</p>
+  }
+</div>

@@ -18,3 +18,10 @@
   line-height: 1.25;
   color: var(--text-placeholder);
 }
+.form__error {
+  margin-top: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #fff;
+}

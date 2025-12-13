@@ -15,4 +15,13 @@ export class InputField {
   placeholder = input.required<string>();
   control = input.required<FormControl>();
   autocomplete = input<string>();
+
+  getErrorMessage() {
+    const ctrl = this.control();
+
+    if (ctrl.hasError('required')) return this.label() + ' é obrigatório';
+    if (ctrl.hasError('maxlength')) return 'Texto muito longo';
+
+    return '';
+  }
 }
