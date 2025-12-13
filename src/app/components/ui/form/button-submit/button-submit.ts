@@ -8,4 +8,5 @@ import { Component, input } from '@angular/core';
 })
 export class ButtonSubmit {
   valid = input.required<boolean>();
+  loading = input.required<boolean>();
 }

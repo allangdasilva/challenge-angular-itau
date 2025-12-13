@@ -1,0 +1,13 @@
+.success__form {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+
+  padding: 84px 20px;
+
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+.success__form__label {
+  color: var(--text-heading-light);
+}

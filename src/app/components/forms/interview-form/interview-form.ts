@@ -4,16 +4,24 @@ import { SelectField } from '../../ui/form/select-field/select-field';
 import { TextareaField } from '../../ui/form/textarea-field/textarea-field';
 import { ButtonSubmit } from '../../ui/form/button-submit/button-submit';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InterviewFormService } from '../../../services/interview-form.service';
+import {
+  FakeInterviewPayload,
+  InterviewFormService,
+} from '../../../services/interview-form.service';
+import { SuccessForm } from '../../ui/form/success-form/success-form';
 
 @Component({
   selector: 'app-interview-form',
-  imports: [InputField, SelectField, TextareaField, ButtonSubmit, ReactiveFormsModule],
+  imports: [InputField, SelectField, TextareaField, ButtonSubmit, ReactiveFormsModule, SuccessForm],
   templateUrl: './interview-form.html',
   styleUrl: './interview-form.css',
 })
 export class InterviewForm {
   readonly _interviewFormService = inject(InterviewFormService);
+
+  success = false;
+  loading = false;
+  error = false;
 
   selectVecancyValues: string[] = ['Backend', 'Frontend', 'QA'];
   selectLevelValues: string[] = ['Jr.', 'Pl.', 'Sn.'];
@@ -27,12 +35,32 @@ export class InterviewForm {
   });
 
   submitForm() {
-    this._interviewFormService.submitForm(
-      this.interviewForm.value.firstName ?? '',
-      this.interviewForm.value.lastName ?? '',
-      this.interviewForm.value.vecancy ?? '',
-      this.interviewForm.value.level ?? '',
-      this.interviewForm.value.message ?? ''
-    );
+    if (this.interviewForm.invalid) {
+      // markAllAsTouched: Quando o usuário clica em "Salvar" e o formulário tem erros, você chama markAllAsTouched() para que todos os campos inválidos mostrem suas mensagens de erro imediatamente, informando o que precisa ser corrigido.
+      this.interviewForm.markAllAsTouched();
+      return;
+    }
+
+    this.loading = true;
+    this.success = false;
+    this.error = false;
+
+    const payload: FakeInterviewPayload = this.interviewForm.getRawValue();
+
+    this._interviewFormService.postInterview(payload).subscribe({
+      next: () => {
+        this.success = true;
+        this.interviewForm.reset({
+          vecancy: '',
+          level: '',
+        });
+      },
+      error: () => {
+        this.error = true;
+      },
+      complete: () => {
+        this.loading = false;
+      },
+    });
   }
 }

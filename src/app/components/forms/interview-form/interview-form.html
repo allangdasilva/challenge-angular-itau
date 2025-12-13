@@ -1,3 +1,6 @@
+@if(success){
+<app-success-form />
+} @else {
 <form class="form" [formGroup]="interviewForm" (ngSubmit)="submitForm()">
   <h2 class="form__label font__title">_Trabalhe conosco</h2>
 
@@ -55,7 +58,11 @@
     </div>
 
     <div class="form__button__group">
-      <app-button-submit [valid]="!interviewForm.valid" />
+      <app-button-submit [loading]="loading" [valid]="!interviewForm.valid" />
     </div>
   </div>
+  @if (error){
+  <p class="form__error">Erro ao enviar formulário</p>
+  }
 </form>
+}

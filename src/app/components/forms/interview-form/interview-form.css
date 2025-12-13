@@ -32,7 +32,18 @@
 .form__button__group {
   justify-self: center;
 }
-
+.form__error {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #fff;
+}
+.form__textarea__group {
+  display: grid;
+  * {
+    height: 100px;
+  }
+}
 @media (width >= 640px) {
   .form__input__group {
     grid-template-columns: 1fr 1fr;
