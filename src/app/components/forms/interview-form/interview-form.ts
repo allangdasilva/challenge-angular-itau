@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { InputField } from '../../ui/form/input-field/input-field';
 import { SelectField } from '../../ui/form/select-field/select-field';
 import { TextareaField } from '../../ui/form/textarea-field/textarea-field';
 import { ButtonSubmit } from '../../ui/form/button-submit/button-submit';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { InterviewFormService } from '../../../services/interview-form.service';
 
 @Component({
   selector: 'app-interview-form',
@@ -12,6 +13,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './interview-form.css',
 })
 export class InterviewForm {
+  readonly _interviewFormService = inject(InterviewFormService);
+
   selectVecancyValues: string[] = ['Backend', 'Frontend', 'QA'];
   selectLevelValues: string[] = ['Jr.', 'Pl.', 'Sn.'];
 
@@ -23,13 +26,13 @@ export class InterviewForm {
     message: new FormControl(''),
   });
 
-  formSubmit() {
-    console.log({
-      firstName: this.interviewForm.value.firstName,
-      lastName: this.interviewForm.value.lastName,
-      vecancy: this.interviewForm.value.vecancy,
-      level: this.interviewForm.value.level,
-      message: this.interviewForm.value.message,
-    });
+  submitForm() {
+    this._interviewFormService.submitForm(
+      this.interviewForm.value.firstName ?? '',
+      this.interviewForm.value.lastName ?? '',
+      this.interviewForm.value.vecancy ?? '',
+      this.interviewForm.value.level ?? '',
+      this.interviewForm.value.message ?? ''
+    );
   }
 }
